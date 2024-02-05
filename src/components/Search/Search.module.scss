@@ -13,3 +13,9 @@
 .btn {
   box-shadow: 1px 3px 9px rgba(#000, 0.25);
 }
+
+@media (max-width: 768px) {
+  .input {
+    width: 90%;
+  }
+}

@@ -14,7 +14,7 @@ function Search(props) {
   };
   return (
     <section className="container">
-      <form className="d-flex justify-content-center gap-4 mb-4 ">
+      <form className="d-flex flex-sm-row flex-column align-items-center justify-content-center gap-4 mb-4 ">
         <input
           type="text"
           className={`${styles.input}`}

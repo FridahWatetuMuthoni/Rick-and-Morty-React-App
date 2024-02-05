@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import styles from "./Cards.module.scss";
+import { Link } from "react-router-dom";
 
 function Cards(props) {
-  const { results } = props;
+  const { results, page } = props;
 
   return results ? (
     results.map((item) => {
@@ -16,9 +17,15 @@ function Cards(props) {
       } else {
         color = "primary";
       }
+
+      const inline_styles = {
+        textDecoration: "none",
+      };
       return (
-        <article
-          className={`col-xm-11 col-sm-6 col-md-4  mb-3 p-0 position-relative shadow-sm  ${styles.card_wrapper}`}
+        <Link
+          to={`${page}${id}`}
+          style={inline_styles}
+          className={`col-xm-11 col-sm-6 col-md-4  mb-3 p-0 position-relative shadow-sm text-dark  ${styles.card_wrapper}`}
           key={id}
         >
           <section className={styles.image_wrapper}>
@@ -33,7 +40,7 @@ function Cards(props) {
           >
             {status}
           </button>
-        </article>
+        </Link>
       );
     })
   ) : (
@@ -43,6 +50,7 @@ function Cards(props) {
 
 Cards.propTypes = {
   results: PropTypes.array,
+  page: PropTypes.string,
 };
 
 export default Cards;

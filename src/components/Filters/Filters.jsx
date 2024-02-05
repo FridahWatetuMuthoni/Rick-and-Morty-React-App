@@ -20,11 +20,22 @@ function Filters(props) {
     setPageNumber: setPageNumber,
   };
 
+  const clear_filters = () => {
+    setStatus("");
+    setGender("");
+    setSpecies("");
+    setPageNumber(1);
+
+    //refreshing the window
+    window.location.reload(false);
+  };
+
   return (
     <>
       <section>
         <p className="text-center fw-bold fs-4 mb-2">Filters</p>
         <p
+          onClick={clear_filters}
           className={`text-center text-primary text-decoration-underline mb-4 ${styles.clear_filter}`}
         >
           Clear Filter

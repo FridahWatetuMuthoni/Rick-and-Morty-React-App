@@ -33,7 +33,7 @@ function Species(props) {
       </h2>
       <div
         id="collapseTwo"
-        className="accordion-collapse collapse"
+        className="accordion-collapse collapse "
         data-bs-parent="#accordionExample"
       >
         <div className="accordion-body d-flex flex-wrap gap-3 ">
